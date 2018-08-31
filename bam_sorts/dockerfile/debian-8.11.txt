@@ -1,0 +1,14 @@
+FROM debian:8.11
+MAINTAINER aokad <aokada@ncc.go.jp>
+
+# Install ant, git for building
+RUN apt-get update && \
+    apt-get --no-install-recommends install -y --force-yes git ant \
+    wget ssl-cert ca-certificates \
+    make tar g++ \
+    python2.7 python-pip && \
+    apt-get clean autoclean && \
+    apt-get autoremove -y 
+
+CMD ["/bin/bash"]
+
