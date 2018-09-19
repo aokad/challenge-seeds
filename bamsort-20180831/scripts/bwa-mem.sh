@@ -7,8 +7,10 @@ set -eux
     ${REFERENCE}/GRCh37.fa \
     ${FASTQ1} \
     ${FASTQ2} \
-    > ${OUTPUT_SAM}
+    > ./alignment.sam
 
+mkdir -p $(dirname ${OUTPUT_SAM})
+mv ./alignment.sam ${OUTPUT_SAM}
 
 << COMMENTOUT
 --env BWA_OPTION	-t 8 -T 0
