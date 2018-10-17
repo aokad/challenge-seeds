@@ -19,7 +19,7 @@ RUN wget -nc https://sourceforge.net/projects/samtools/files/samtools/1.9/samtoo
     cd /tools/samtools-1.9 && \
     make && \
     make install && \
-    && \
+    \
     cd /tools && \
     wget -nc https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2 && \
     tar xjvf bcftools-1.9.tar.bz2 && \
@@ -27,7 +27,7 @@ RUN wget -nc https://sourceforge.net/projects/samtools/files/samtools/1.9/samtoo
     cd bcftools-1.9 && \
     make && \
     cp ./bcftools /usr/local/bin/ && \
-    && \
+    \
     cd /tools && \
     wget https://github.com/biod/sambamba/releases/download/v0.6.8/sambamba-0.6.8-linux-static.gz && \
     gzip -d sambamba-0.6.8-linux-static.gz && \
